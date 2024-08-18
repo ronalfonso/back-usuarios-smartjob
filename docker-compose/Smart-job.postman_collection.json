@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "9739b985-5b17-494e-8381-08917d974baa",
+		"name": "Smart-job",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "5310866"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Juan Rodriguez\",\r\n    \"email\": \"juan@rodriguez.org\",\r\n    \"password\": \"hunter2\",\r\n    \"phones\": [\r\n        {\r\n        \"number\": \"1234567\",\r\n        \"cityCode\": \"1\",\r\n        \"countryCode\": \"57\"\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8090/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"juan@rodriguez.org\",\r\n    \"password\": \"hunter2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:54345/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "User List",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzYTcyYWE0MC0yMmY0LTQ3MjYtYTQ0NC01YTRhZjJjYmI0ZTUifQ.tTDrWxQtwXtvReTElSIiMf7fPSQ96zTskXOO4-tMol4",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"list"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ro",
+							"disabled": true
+						},
+						{
+							"key": "dateFrom",
+							"value": "2024-08-16",
+							"disabled": true
+						},
+						{
+							"key": "dateTo",
+							"value": "2024-08-18",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8090/users/ec82a348-1236-47c0-bf22-a1368a083e60"
+			},
+			"response": []
+		},
+		{
+			"name": "User update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Juan Rodriguez\",\r\n    \"isActive\": true,\r\n    \"phones\": [\r\n        {\r\n            \"id\": \"38f7a88d-5b79-4bc6-8450-91ac71a21613\",\r\n            \"number\": \"1234567\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"58\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8090/users/ec82a348-1236-47c0-bf22-a1368a083e60"
+			},
+			"response": []
+		},
+		{
+			"name": "User delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8090/users/ec82a348-1236-47c0-bf22-a1368a083e60"
+			},
+			"response": []
+		}
+	]
+}

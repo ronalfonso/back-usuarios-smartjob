@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  eureka-server:
+    image: eureka-server:v1
+    ports:
+      - "8761:8761"
+    restart: always
+    networks:
+      - smartjob-net
+  db:
+    image: postgres:13.14
+    networks:
+      - smartjob-net
+    environment:
+      - POSTGRES_DB=smartjob_db
+      - POSTGRES_CREATE_USER=postgres
+      - POSTGRES_CREATE_USER_PASSWORD=secret
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  servicio-usuarios:
+    image: servicio-usuarios:v1
+    restart: always
+    networks:
+      - smartjob-net
+    depends_on:
+      - eureka-server
+      - db
+  gateway-server:
+    image: gateway-server:v1
+    ports:
+      - "8090:8090"
+    restart: always
+    networks:
+      - smartjob-net
+    depends_on:
+      - eureka-server
+      - servicio-usuarios
+networks:
+  smartjob-net:
+volumes:
+  db-data:
