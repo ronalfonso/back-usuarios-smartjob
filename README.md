@@ -68,8 +68,9 @@ A continuacion en la carpeta docker-compose encontrara una archivo Smart-job.pos
 Si tienes alguna pregunta, sugerencia o comentario, no dudes en ponerte en contacto conmigo:
 
 - **Nombre:** Ronald Alfonso
+- **Teléfono:** +58-0424-626.67.32
 - **Linkedin:** https://www.linkedin.com/in/ronald-alfonso/
 - **Correo electrónico:** raalfonsoparra@gmail.com
-- **Enlace al proyecto:** back-usuarios-smartjob
+- **Enlace al proyecto:** https://github.com/ronalfonso/back-usuarios-smartjob
 
 ![Alt text](https://avatars.githubusercontent.com/u/41694372?v=4)
