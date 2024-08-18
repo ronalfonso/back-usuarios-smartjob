@@ -7,8 +7,8 @@ Este repositorio contiene una implementación de microservicios para gestionar u
 Para comenzar, clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/microservicios-usuarios.git
-cd microservicios-usuarios
+git clone https://github.com/ronalfonso/back-usuarios-smartjob.git
+cd back-usuarios-smartjob
 ```
 
 ## Generación del JAR y Creacion de imagen Docker
